@@ -34,31 +34,6 @@ def exists_file(command: str):
             with open('.env', 'w') as files_env:
                 files_env.write(env_write)
 
-            if platform == "linux" or platform == "linux2":
-                os.system("python3 -m venv venv")
-                os.system("source venv/bin/activate")
-                os.system("pip install -r req.txt")
-                os.system("python manage.py makemigrations backendAPI")
-                os.system("python manage.py migrate backendAPI")
-                os.system("python manage.py migrate")
-                print("\n\n -------------ЗАВЕРШЕНО!------------- \n\n")
-            elif platform == "darwin":
-                os.system("python3 -m venv venv")
-                os.system("source venv/bin/activate")
-                os.system("pip install -r req.txt")
-                os.system("python manage.py makemigrations backendAPI")
-                os.system("python manage.py migrate backendAPI")
-                os.system("python manage.py migrate")
-                print("\n\n -------------ЗАВЕРШЕНО!------------- \n\n")
-            elif platform == "win32":
-                os.system("python -m venv venv")
-                os.system("venv/bin/activate")
-                os.system("pip install -r req.txt")
-                os.system("python manage.py makemigrations backendAPI")
-                os.system("python manage.py migrate backendAPI")
-                os.system("python manage.py migrate")
-                print("\n\n -------------ЗАВЕРШЕНО!------------- \n\n")
-
 
 def startup():
     if platform == "linux" or platform == "linux2":
